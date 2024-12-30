@@ -1,0 +1,100 @@
+---
+import BentoItem from "./BentoItem.astro";
+---
+
+<section id="services"
+    class={`
+    w-full max-w-[1400px] 
+    grid lg:grid-cols-10 auto-rows-[30rem] gap-4 
+    mx-auto p-6 md:p-12 lg:p-20
+    `}
+>
+    <BentoItem 
+    class="col-span-10 lg:col-span-4" 
+    title="Standard cleaning"
+    > 
+        <div
+        slot="image"
+        class="absolute left-0 top-0 bottom-0 w-full
+        h-full group-hover:scale-110 transition-scale duration-1000
+        ease-in-out opacity-90 bg-blend-luminosity bg-center bg-cover 
+        bg-no-repeat bg-blue-100 -z-10"
+        style="background-image: url('/bento2.webp')"
+        >
+        </div>
+       
+        <p slot="content" class="text-base md:text-lg max-w-xl text-pink-200">
+            Looking to keep your <strong>home sparkling every day?</strong> Our standard cleaning service 
+            <strong>is perfect for you</strong>. With each visit, we ensure a clean and welcoming environment, 
+            ready for you to <strong>enjoy with your family.</strong>
+        </p>
+    </BentoItem>
+
+    <BentoItem 
+    class="col-span-10 lg:col-span-6" 
+    title="Deep Cleaning" 
+    subtitle="The deep cleaning you need." 
+    >
+        <div
+        slot="image"
+        class="absolute left-0 top-0 bottom-0 w-full
+        h-full group-hover:scale-110 transition-scale duration-1000
+        ease-in-out opacity-90 bg-blend-luminosity bg-center bg-cover 
+        bg-no-repeat bg-pink-200 -z-10"
+        style="background-image: url('/bento1.webp')"
+        >
+        </div>
+
+        <p slot="content" class="text-base md:text-lg max-w-xl text-sky-200">
+            Is ideal when it's been a <strong>long time since</strong> your last thorough cleaning 
+            or if you want to <strong>completely refresh your home.</strong> 
+            We meticulously clean every corner, <strong>leaving your space looking brand new.</strong>
+        </p>
+    </BentoItem>
+
+    
+
+    <BentoItem 
+    class="col-span-10 lg:col-span-6" 
+    title="Move in/out cleaning"
+    subtitle="Reserve your cleaning today and move in with ease!" 
+    >
+        <div
+        slot="image"
+        class="absolute left-0 top-0 bottom-0 w-full
+        h-full group-hover:scale-110 transition-scale duration-1000
+        ease-in-out opacity-90 bg-blend-luminosity bg-center bg-cover 
+        bg-no-repeat bg-pink-200 -z-10"
+        style="background-image: url('/bento2.webp')"
+        >
+    </div>
+
+        <p slot="content" class="text-base md:text-lg max-w-xl text-sky-100">
+            <strong>Moving?</strong> Let us take care of the cleaning! <strong>Our moving cleaning service guarantees</strong> 
+            an impeccable handover of the property and prepares you to <strong>enjoy your new home.</strong>
+        </p>
+    </BentoItem>
+
+    <BentoItem 
+    class="col-span-10 lg:col-span-4" 
+    title="Additional Services" 
+    > 
+        <div
+        slot="image"
+        class="absolute left-0 top-0 bottom-0 w-full
+        h-full group-hover:scale-110 transition-scale duration-1000
+        ease-in-out opacity-90 bg-blend-luminosity bg-center bg-cover 
+        bg-no-repeat bg-blue-100 -z-10"
+        style="background-image: url('/bento1.webp')"
+        >
+        </div>
+         
+        <p slot="content" class="text-base md:text-lg max-w-xl text-pink-200">
+            <strong>Customize your cleaning!</strong> We offer a wide range of additional services 
+            to meet <strong>all your needs.</strong>  From carpet cleaning to ironing, 
+            we have the </strong>perfect solution for you.</strong>
+        </p>
+    </BentoItem>
+
+  
+</section>

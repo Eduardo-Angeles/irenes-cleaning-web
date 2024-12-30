@@ -1,0 +1,85 @@
+---
+import Logo from './Logo.astro';
+import ButtonContact from './ButtonContact.astro';
+import SwitchTheme from './SwitchTheme.astro';
+---
+
+<header id="header-nav" class="fixed inset-x-0 top-0 z-50 py-6 text-white">
+    <div class="mx-auto max-w-7xl w-full px-5 sm:px-8 md:px-14 lg:px-5">
+        <nav class="w-full flex justify-between gap-6 relative">
+            <!-- logo -->
+            <div class="min-w-max inline-flex relative">
+                <a href="/" class="relative flex items-center gap-3">
+                    <Logo class="w-10 h-auto"/>
+                    <div class="inline-flex text-lg font-semibold text-heading-1">
+                        Irene's Cleaning
+                    </div>
+                </a>
+            </div>
+
+            <div data-nav-overlay aria-hidden="true" class="fixed hidden inset-0 lg:!hidden bg-box-bg bg-opacity-50 backdrop-filter backdrop-blur-xl"></div>
+            <div data-navbar class="flex h-0 overflow-hidden lg:!h-auto lg:scale-y-100 duration-300 ease-linear flex-col gap-y-6 gap-x-4 lg:flex-row w-full lg:justify-between lg:items-center absolute lg:relative top-full lg:top-0 bg-body lg:bg-transparent border-x border-x-box-border lg:border-x-0">
+                <ul class="border-t border-box-border lg:border-t-0 px-6 lg:px-0 pt-6 lg:pt-0 flex flex-col lg:flex-row gap-y-4 gap-x-3 text-lg text-heading-2 w-full lg:justify-center lg:items-center">
+                    <ul class="border-t border-box-border lg:border-t-0 px-6 lg:px-0 pt-6 lg:pt-0 flex flex-col lg:flex-row gap-y-4 gap-x-3 text-lg text-heading-2 w-full lg:justify-center lg:items-center">
+                    <li><a href="/" class="text-lg text-heading-2">Home</a></li>
+                    <li><a href="#services" class="text-lg text-heading-2">Services</a></li>
+                    <li><a href="/id" class="text-lg text-heading-2">ID</a></li>
+                    <li><a href="/promotions" class="text-lg text-heading-2">Promotios</a></li>
+                </ul>
+                </ul>
+
+                <div class="lg:min-w-max flex items-center sm:w-max w-full pb-6 lg:pb-0 border-b border-box-bg lg:border-0 px-6 lg:px-0">
+                    <ButtonContact />
+               </div>
+            </div>
+            
+        </nav>
+
+            
+    
+    </div>
+</header>
+
+<style>
+
+  #header-nav {
+    animation: blur-light linear both, text-color-change linear both;
+    animation-timeline: scroll();
+    animation-range: 0 500px;
+  }
+
+  @keyframes blur-light {
+    to {
+      box-shadow: 0px 5px 50px -5px rgba(0, 0, 0, 0.1), 0px 0px 0 1px rgba(0, 0, 0, 0.1);
+      background: rgba(255, 242, 251, 0.5);
+      backdrop-filter: blur(10px);
+    }
+  }
+
+  @keyframes text-color-change {
+    to {
+      color: #8d0ea7; /* Cambia este color al que desees */
+    }
+  }
+
+  .dark #header-nav {
+    animation: blur-dark linear both, text-color-change-dark linear both;
+    animation-timeline: scroll();
+    animation-range: 0 500px;
+  }
+
+  @keyframes blur-dark {
+    to {
+      box-shadow: 0px 5px 50px -5px rgba(0, 0, 0, 0.1), 0px 0px 0 1px rgba(0, 0, 0, 0.1);
+      background: rgba(49, 40, 49, 0.3);
+      backdrop-filter: blur(10px);
+    }
+  }
+
+  @keyframes text-color-change-dark {
+    to {
+      color: #ffffff; /* Cambia este color al que desees */
+    }
+  }
+
+</style>

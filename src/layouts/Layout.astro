@@ -1,22 +1,102 @@
+---
+import '@fontsource-variable/onest';
+import Header from '../components/Header.astro';
+
+import { ClientRouter } from 'astro:transitions';
+
+interface Props {
+	description: string;
+	title: string;
+}
+
+const { description, title } = Astro.props;
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
+    <meta name="robots" content="index, follow">
+    <meta name="keywords" content="irenes cleaning, msr irenes cleaning, cleaning service, deep cleaning, maid service, Jersey City cleaning service,
+      New Jersey cleaning service, post-construction cleaning, move-out cleaning, carpet cleaning">
+
+    <meta property="og:title" content={title}>
+    <meta property="og:description" content={description} >
+    <meta property="og:image" content="/public/archivo-page/1/gallery/img-9.webp">
+    <meta property="og:url" content="https://irenescleaning.com">
+    <meta property="og:type" content="website">
+
+
 		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    
+		<title>{title}</title>
+
+    
 	</head>
-	<body>
+	<body class="overflow-hidden overflow-y-auto bg-body">
+		<Header />
 		<slot />
+
 	</body>
+
 </html>
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+<style is:global>
+  :root {
+    --color-bg: 255 242 251;
+    --color-border: 255 255 255;
+    --color-box: 255 255 255;
+    --box-border: 229 231 235;
+    --box-sd: 226 232 240 / 0.5;
+    --heading-1:  23 37 84;
+    --heading-2: 31 41 55;
+    --heading-3: 55 65 81;
+    --color-icono: 0 0 0; /* Negro puro */
+  }
+
+  .dark {
+    --color-bg: 3 7 18;
+    --color-box: 17 24 39;
+    --box-border: 243 244 246/0.1;
+    --box-sd: transparent;
+
+    --heading-1:  255 255 255;
+    --heading-2:  243 244 246;
+    --heading-3:  209 213 219;
+
+    --altura_header: 80px;
+    --color-icono: 255 255 255; /* Blanco puro */
+  }
+
+  html{
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: 'Onest Variable', sans-serif;
+  }
+
+  [data-toggle-nav][data-open-nav="true"] #line1 {
+    transform: translateY(0.375rem) rotate(40deg);
+  }
+  [data-toggle-nav][data-open-nav="true"] #line2 {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+  [data-toggle-nav][data-open-nav="true"] #line3 {
+    transform: translateY(-0.375rem) rotate(-40deg);
+  }
+
+  
+  [data-nav-overlay][data-is-visible="true"] {
+    visibility: visible;
+    display: flex;
+  }
+
+.menu_hamburguesa{
+    display: none;
+}
+
 </style>

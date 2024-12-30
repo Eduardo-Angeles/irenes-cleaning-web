@@ -1,0 +1,37 @@
+---
+interface Props {
+  class?: string
+  target?: string
+  url: string
+}
+
+const { url, target, class: className } = Astro.props
+---
+
+<a
+  href={url}
+  target=`${target ?? '_self'}`
+  rel="noopener noreferrer"
+  class:list={[
+        className,
+        "inline-block",
+        "rounded-full",
+        "border",
+        "border-pink-600",
+        "px-9",
+        "py-6",
+        "text-sm",
+        "font-medium",
+        "text-white", // Texto blanco por defecto
+        "bg-pink-600", // Fondo rosa por defecto
+        "hover:bg-white", // Fondo blanco al pasar el cursor
+        "hover:text-pink-600", // Texto rosa al pasar el cursor
+        "focus:outline-none",
+        "focus:ring",
+        "active:bg-white", // Fondo blanco al hacer clic
+        "active:text-pink-600", // Texto rosa al hacer clic
+        "whitespace-nowrap",
+  ]}
+>
+  <slot />
+</a>

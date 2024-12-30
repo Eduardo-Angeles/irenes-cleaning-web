@@ -1,11 +1,45 @@
 ---
-import Welcome from '../components/Welcome.astro';
+import Bento from '../components/Bento.astro';
+import Hero from '../components/Hero.astro';
 import Layout from '../layouts/Layout.astro';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Irene's Cleaning| Service Professional Cleaning in Jersey City"
+	description="Reliable and affordable cleaning service in Jersey City and surrounding areas. Deep, customized, and easy-to-schedule cleanings. Your home sparkling with just one click!">
+	
+	<main>
+		<Hero />
+		<section class="relative bg-[url(/fondo.webp)] bg-cover bg-center">
+			<div class="absolute inset-0 bg-white opacity-95"></div>
+			<div class="relative z-10">
+				<!-- Contenido de la sección -->
+				 <h2 class="lg:mt-20 mt-10 relative text-4xl lg:text-6xl text-center text-purple-700 font-bold mb-10 lg:mb-06 underline-pink text-heading-1">
+				Our Services
+			      </h2>
+				<Bento />
+			</div>
+		</section>
+		
+		
+	</main>
+
 </Layout>
+
+<style>
+  .underline-pink::after {
+    content: '';
+    display: block;
+    width: 120px; /* Ajusta este valor para cambiar el ancho de la línea */
+    height: 2px; /* Grosor de la línea */
+    background-color: #aa69ff; /* Color rosa */
+    position: absolute;
+    bottom: -10px; /* Ajusta esta distancia según sea necesario */
+    left: 50%; /* Centra la línea horizontalmente */
+    transform: translateX(-50%); /* Centra la línea horizontalmente */
+  }
+
+</style>
+
