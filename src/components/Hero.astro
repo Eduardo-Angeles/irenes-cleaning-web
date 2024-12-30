@@ -1,9 +1,13 @@
+---
+import FormsDescuento from './FormsDescuento.astro'
+---
+
 <section
-  class="relative bg-[url(/hero.webp)] bg-cover bg-center bg-no-repeat bg-fuchsia-800"
+  class="relative bg-[url(/hero.webp)] bg-cover bg-center bg-no-repeat bg-fuchsia-600"
 >
   <!-- Fondo de la sección con una imagen de fondo -->
 <div
-  class="absolute inset-0 bg-gray-950 bg-opacity-50"
+  class="absolute inset-0 bg-gray-800 bg-opacity-50"
 >
 </div>
 
@@ -15,7 +19,7 @@
     <div class="max-w-xl text-center ltr:sm:text-left rtl:sm:text-right">
       <!-- Título principal -->
       <h1 class="text-3xl font-extrabold text-white sm:text-5xl">
-        Irene Cleaning Services
+        Irene's Cleaning Services
 
         <!-- Subtítulo en negrita y color diferente -->
         <strong class="block font-extrabold text-purple-600"> Forever Home. </strong>
@@ -27,6 +31,12 @@
       </p>
 
       <!-- Botones de acción -->
+       <div class="mt-10  w-full flex max-w-md mx-auto lg:mx-0">
+                <div class="flex sm:flex-row flex-col gap-5 w-full">
+                    <FormsDescuento />
+                    </form>
+                </div>
+            </div>
       <div class="mt-8 flex flex-wrap gap-4 text-center">
         <a
           href="#"

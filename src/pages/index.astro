@@ -2,6 +2,7 @@
 import Bento from '../components/Bento.astro';
 import Hero from '../components/Hero.astro';
 import Layout from '../layouts/Layout.astro';
+import Services from '../components/Services.astro';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -12,13 +13,18 @@ import Layout from '../layouts/Layout.astro';
 	
 	<main>
 		<Hero />
+		<section class="relative bg-[url(/fondo2.webp)] bg-cover bg-center min-h-screen w-full">
+			<div class="absolute inset-0 bg-white opacity-95"></div>
+			<div class="relative z-10">
+				<!-- Contenido de la sección -->
+				<Services />
+			</div>
+		</section>
+		
 		<section class="relative bg-[url(/fondo.webp)] bg-cover bg-center">
 			<div class="absolute inset-0 bg-white opacity-95"></div>
 			<div class="relative z-10">
 				<!-- Contenido de la sección -->
-				 <h2 class="lg:mt-20 mt-10 relative text-4xl lg:text-6xl text-center text-purple-700 font-bold mb-10 lg:mb-06 underline-pink text-heading-1">
-				Our Services
-			      </h2>
 				<Bento />
 			</div>
 		</section>

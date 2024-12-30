@@ -1,0 +1,51 @@
+---
+import Container from './shared/Container.astro';
+import ServiceIndividual from './ServiceIndividual.astro';
+
+
+import { services } from "../utils/data.ts";
+
+
+type ServicesProps = {
+    title: string;
+    description: string;
+    icon: string
+};
+
+
+---
+
+<section id="services">
+    <Container className="space-y-10 md:sapce-y-12">
+        <div class="text-center max-w-3xl mx-auto space-y-4">
+            <h2 class="relative text-4xl lg:text-6xl text-center text-purple-800 font-bold mb-10 lg:mb-20 underline-pink text-heading-1">
+            What we offer
+            </h2>                
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            {
+                    services.map((service: ServicesProps) => {
+                    return (
+                            <ServiceIndividual title={service.title} description={service.description} icon={service.icon}>
+                            </ServiceIndividual>
+                            );
+                    })
+            }
+        </div>
+    </Container>
+</section>
+
+<style>
+    .underline-pink::after {
+      content: '';
+      display: block;
+      width: 120px; /* Ajusta este valor para cambiar el ancho de la línea */
+      height: 2px; /* Grosor de la línea */
+      background-color: #8f08e9; /* Color rosa */
+      position: absolute;
+      bottom: -10px; /* Ajusta esta distancia según sea necesario */
+      left: 50%; /* Centra la línea horizontalmente */
+      transform: translateX(-50%); /* Centra la línea horizontalmente */
+    }
+  
+  </style>
