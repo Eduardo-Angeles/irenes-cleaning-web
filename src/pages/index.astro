@@ -3,16 +3,28 @@ import Bento from '../components/Bento.astro';
 import Hero from '../components/Hero.astro';
 import Layout from '../layouts/Layout.astro';
 import Services from '../components/Services.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Numeros from '../components/Numeros.astro';
+import Reviews from '../components/Reviews.astro';
+import FormsContact from '../components/FormsContact.astro';
+import Footer from '../components/Footer.astro';
+import Popup from '../components/Popup';
 ---
 
 <Layout title="Irene's Cleaning| Service Professional Cleaning in Jersey City"
 	description="Reliable and affordable cleaning service in Jersey City and surrounding areas. Deep, customized, and easy-to-schedule cleanings. Your home sparkling with just one click!">
 	
 	<main>
+		<Popup client:load/>
 		<Hero />
+		<section class="relative bg-[url(/fondo3.webp)] bg-cover bg-center min-h-screen w-full">
+			<div class="absolute inset-0 bg-white opacity-95"></div>
+			<div class="relative z-10">
+				<!-- Contenido de la sección -->
+				<Numeros />
+				<Reviews />
+			</div>
+		</section>
+		
 		<section class="relative bg-[url(/fondo2.webp)] bg-cover bg-center min-h-screen w-full">
 			<div class="absolute inset-0 bg-white opacity-95"></div>
 			<div class="relative z-10">
@@ -28,9 +40,11 @@ import Services from '../components/Services.astro';
 				<Bento />
 			</div>
 		</section>
+		<FormsContact />
 		
 		
 	</main>
+	<Footer />
 
 </Layout>
 

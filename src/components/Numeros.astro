@@ -1,0 +1,54 @@
+---
+import { CountUp } from "./CountUp.tsx";
+---
+
+<section id="about" class="max-w-6xl mx-auto py-20 px-20">
+    <h2 class="relative text-4xl lg:text-6xl text-center font-bold mb-10 lg:mb-20 underline-pink text-heading-1">
+        About Us
+    </h2>
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-y-10">
+
+        <div class="flex flex-col justify-center items-center text-purple-700">
+            <span class="number text-7xl font-bold tabular-nums tracking-tighter">
+                <CountUp client:visible initial={0} final={5.0} decimals={1} />
+            </span>
+            <span class="uppercase opacity-70 items-center">Stars Reviews!</span>
+        </div>
+
+        <div class="flex flex-col justify-center items-center text-purple-700">
+            <span class="number text-7xl font-bold tabular-nums tracking-tighter">
+                +<CountUp client:visible initial={0} final={2100} />
+            </span>
+            <span class="uppercase opacity-70">successful cleaning services</span>
+        </div>
+        
+        <div class="flex flex-col justify-center items-center text-purple-700">
+            <span class="number text-7xl font-bold tabular-nums tracking-tighter">
+                +<CountUp client:visible initial={0} final={8}  />
+            </span>
+            <span class="uppercase opacity-70">years of experience</span>
+        </div>
+
+    </div>
+</section>
+
+<style>
+  .underline-pink::after {
+    content: '';
+    display: block;
+    width: 120px; /* Ajusta este valor para cambiar el ancho de la línea */
+    height: 2px; /* Grosor de la línea */
+    background-color: #ae37dd; /* Color rosa */
+    position: absolute;
+    bottom: -10px; /* Ajusta esta distancia según sea necesario */
+    left: 50%; /* Centra la línea horizontalmente */
+    transform: translateX(-50%); /* Centra la línea horizontalmente */
+  }
+
+    .number {
+        text-shadow:
+        0 0 10px rgba(255, 255, 255, 0.3);
+
+    }
+</style>
+

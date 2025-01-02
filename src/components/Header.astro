@@ -1,7 +1,6 @@
 ---
-import Logo from './Logo.astro';
 import ButtonContact from './ButtonContact.astro';
-import SwitchTheme from './SwitchTheme.astro';
+import Hamburgermenu from './Hamburgermenu.tsx';
 ---
 
 <header id="header-nav" class="fixed inset-x-0 top-0 z-50 py-6 text-white">
@@ -10,7 +9,8 @@ import SwitchTheme from './SwitchTheme.astro';
             <!-- logo -->
             <div class="min-w-max inline-flex relative">
                 <a href="/" class="relative flex items-center gap-3">
-                    <Logo class="w-10 h-auto"/>
+                    <img src="logo.png" alt="Logo" class="h-auto w-16" />
+
                     <div class="inline-flex text-lg font-semibold text-heading-1">
                         Irene's Cleaning
                     </div>
@@ -23,14 +23,18 @@ import SwitchTheme from './SwitchTheme.astro';
                     <ul class="border-t border-box-border lg:border-t-0 px-6 lg:px-0 pt-6 lg:pt-0 flex flex-col lg:flex-row gap-y-4 gap-x-3 text-lg text-heading-2 w-full lg:justify-center lg:items-center">
                     <li><a href="/" class="text-lg text-heading-2">Home</a></li>
                     <li><a href="#services" class="text-lg text-heading-2">Services</a></li>
-                    <li><a href="/id" class="text-lg text-heading-2">ID</a></li>
-                    <li><a href="/promotions" class="text-lg text-heading-2">Promotios</a></li>
+                    <li><a href="#about" class="text-lg text-heading-2">About</a></li>
+              
                 </ul>
                 </ul>
 
                 <div class="lg:min-w-max flex items-center sm:w-max w-full pb-6 lg:pb-0 border-b border-box-bg lg:border-0 px-6 lg:px-0">
                     <ButtonContact />
                </div>
+            </div>
+
+             <div class="min-w-max flex items-center gap-x-3">
+                <Hamburgermenu client:load />
             </div>
             
         </nav>
