@@ -4,6 +4,7 @@ import { useState, useEffect } from "preact/hooks";
 const Popup = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [phoneNumber, setPhoneNumber] = useState("");
+  const [name, setName] = useState("");
 
   useEffect(() => {
     setIsVisible(true);
@@ -15,7 +16,8 @@ const Popup = () => {
 
   const handleSubmit = async (event: h.JSX.TargetedEvent<HTMLFormElement, Event>) => {
     event.preventDefault();
-    // Aquí puedes manejar el envío del número de celular
+    // Aquí puedes manejar el envío del número de celular y nombre
+    console.log("Nombre:", name);
     console.log("Número de celular:", phoneNumber);
 
     // Enviar el formulario manualmente
@@ -59,6 +61,19 @@ const Popup = () => {
             method="POST"
             onSubmit={handleSubmit}
           >
+            <label>
+              <input
+                type="text"
+                name="name"
+                value={name}
+                onChange={(e) =>
+                  setName((e.target as HTMLInputElement).value)
+                }
+                required
+                placeholder="Your name"
+                style={inputStyle}
+              />
+            </label>
             <label>
               <input
                 type="tel"
