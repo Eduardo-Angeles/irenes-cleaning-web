@@ -2,6 +2,9 @@
   "name": "irenes-cleaning-web",
   "type": "module",
   "version": "0.0.1",
+  "engines": {
+    "node": ">=18.19.0"
+  },
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
@@ -15,8 +18,7 @@
     "@fontsource-variable/onest": "^5.1.1",
     "astro": "^5.1.1",
     "preact": "^10.25.4",
-    "tailwindcss": "^3.4.17",
-    "tailwindcss-animations": "^2.0.0"
+    "tailwindcss": "^3.4.17"
   },
   "devDependencies": {
     "tailwindcss-animated": "^1.1.2"
