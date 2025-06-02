@@ -211,6 +211,20 @@ import Yelp from './icons/Yelp.astro';
       form.addEventListener('submit', function(event) {
         event.preventDefault();
         const formData = new FormData(form);
+        
+        // Verificar si algún campo contiene la palabra "scam"
+        let containsScam = false;
+        for (let [key, value] of formData.entries()) {
+          if (value.toString().toLowerCase().includes('scam')) {
+            containsScam = true;
+            break;
+          }
+        }
+
+        if (containsScam) {
+          alert('Lo sentimos, no podemos procesar este formulario.');
+          return;
+        }
 
         // Envía los datos del formulario usando fetch
         fetch(form.action, {
