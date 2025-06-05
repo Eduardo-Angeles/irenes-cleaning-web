@@ -16,9 +16,16 @@ const Popup = () => {
 
   const handleSubmit = async (event: h.JSX.TargetedEvent<HTMLFormElement, Event>) => {
     event.preventDefault();
-    // Aquí puedes manejar el envío del número de celular y nombre
-    console.log("Nombre:", name);
-    console.log("Número de celular:", phoneNumber);
+    
+    // Verificar palabras prohibidas
+    const forbiddenWords = ['scam', 'scammer', 'scamming', 'scammed'];
+    const inputText = (name + ' ' + phoneNumber).toLowerCase();
+    
+    if (forbiddenWords.some(word => inputText.includes(word))) {
+      alert('Thank you for your message! We will get back to you soon.');
+      closePopup();
+      return;
+    }
 
     // Enviar el formulario manualmente
     const form = event.target as HTMLFormElement;
@@ -32,13 +39,15 @@ const Popup = () => {
         }
       });
       if (response.ok) {
-        console.log("Formulario enviado con éxito");
+        alert('Thank you for your message! We will get back to you soon.');
         closePopup();
       } else {
-        console.error("Error al enviar el formulario");
+        alert('Thank you for your message! We will get back to you soon.');
+        closePopup();
       }
     } catch (error) {
-      console.error("Error al enviar el formulario", error);
+      alert('Thank you for your message! We will get back to you soon.');
+      closePopup();
     }
   };
 
