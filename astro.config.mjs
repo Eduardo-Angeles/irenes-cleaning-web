@@ -11,4 +11,9 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: "https://mrsirenescleaning.com/",
   integrations: [tailwind(), preact(), sitemap()],
+  vite: {
+    resolve: {
+      extensions: ['.tsx', '.ts', '.jsx', '.js', '.json']
+    }
+  }
 });
